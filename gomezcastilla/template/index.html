@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+{% for post in posts %}
+		<a href='{{post.slug}}'><h1>{{post.title}}</h1></a>
+		<img src="{{STATIC_URL}}{{post.image}}">
+		<p>{{post.content}}</p>
+		<p>Posteado en {{post.category}}</p>
+{% endfor %}
+
+{% endblock %}
