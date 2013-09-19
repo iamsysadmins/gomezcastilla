@@ -3,10 +3,16 @@
 {% block contenido %}
 
 {% for post in posts %}
+	{% if post.image  %}
 		<a href='{{post.slug}}'><h1>{{post.title}}</h1></a>
-		<img src="{{STATIC_URL}}{{post.image}}">
+		<img src="{{MEDIA_URL}}{{post.image}}" class="img-polaroid">
 		<p>{{post.content}}</p>
 		<p>Posteado en {{post.category}}</p>
+	{% else %}	
+		<a href='{{post.slug}}'><h1>{{post.title}}</h1></a>
+		<p>{{post.content}}</p>
+		<p>Posteado en {{post.category}}</p>
+	{% endif %}
 {% endfor %}
 
 {% endblock %}

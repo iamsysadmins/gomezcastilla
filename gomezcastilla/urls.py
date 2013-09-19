@@ -18,5 +18,5 @@ urlpatterns = patterns('',
 	url(r'^$','gomezcastilla.post.views.loop'),
 	#url(r'^post/(?P<idpost>[0-9]+)/$','post.views.single'),
 	url(r'^(?P<idpost>[-\w]+)/$', 'gomezcastilla.post.views.single', name='single'),
-	url(r'^/media/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.MEDIA_ROOT,}),
+	url(r'^media/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.MEDIA_ROOT},),
 )
